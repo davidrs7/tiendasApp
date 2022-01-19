@@ -1,0 +1,14 @@
+<h1>Catalogo <small>Busos blinders</small> </h1>
+<hr>
+<!-- *ngFor="let heroe of heroes; let i = index"-->
+<div class="card-columns">
+    <div class="card animated fadeIn fast" *ngFor="let referencia of referencias;">
+        <img class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">{{ referencia.refDescripcion }}</h5> 
+            <br>
+            <button type="button" class="btn btn-outline-primary" style="width: 100%;">Descubrir</button>
+            <!--<a [routerLink]="['/heroe',i]" class="btn btn-outline-primary" style="width: 100%;">Ver mas...</a>-->
+        </div>
+    </div>
+</div>
