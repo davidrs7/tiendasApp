@@ -19,6 +19,7 @@ import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.
 import { CategoriasComponent } from './components/categorias/categorias.component';
 import { TiendaService } from './Services/tienda.service';
 import { ProductosComponent } from './components/productos/productos.component';
+import { ProductoTarjetaComponent } from './components/producto-tarjeta/producto-tarjeta.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { ProductosComponent } from './components/productos/productos.component';
     BuscarHeroeComponent,
     HeroeTarjetaComponent,
     CategoriasComponent,
-    ProductosComponent
+    ProductosComponent,
+    ProductoTarjetaComponent
   ],
   imports: [
     BrowserModule,

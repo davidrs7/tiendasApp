@@ -11,15 +11,21 @@ export class TiendaService {
     [
       {
         refCodigo: 1,
-        refDescripcion: 'BUSO CON CAPOTA UNISEX'
+        refDescripcion: 'BUSO CON CAPOTA UNISEX',
+        img: 'assets/img/Productos/BusosCapota.PNG'
+
       },
       {
-        refCodigo: 1,
-        refDescripcion: 'BUSO SIN CAPOTA UNISEX'
-      },
+        refCodigo: 2,
+        refDescripcion: 'BUSO SIN CAPOTA UNISEX',
+        img: 'assets/img/Productos/BusosSinCapota.PNG'
+
+      }, 
       {
-        refCodigo: 1,
-        refDescripcion: 'BUSO PARA NIÑOS UNISEX'
+        refCodigo: 3,
+        refDescripcion: 'BUSO PARA NIÑOS UNISEX',
+        img: 'assets/img/Productos/BusosNiñoCapota.PNG'
+
       }
     ];
 
@@ -28,57 +34,50 @@ export class TiendaService {
     [
       {
         refCodigo: 1,
-        talla: 'S',
-        cantidad: 6,
+        refDescripcion: 'BUSO CON CAPOTA UNISEX',
         color: 'Rojo',
         vlrUnidad: 32.999,
         img: 'assets/img/Productos/RojoCapota.PNG'
       },
       {
         refCodigo: 1,
-        talla: 'M',
-        cantidad: 6,
-        color: 'Rojo',
+        refDescripcion: 'BUSO CON CAPOTA UNISEX',
+        color: 'Verde neon',
         vlrUnidad: 32.999,
         img: 'assets/img/Productos/NeonCapota.PNG'
       },
       {
-        refCodigo: 1,
-        talla: 'L',
-        cantidad: 6,
-        color: 'Rojo',
+        refCodigo: 3,
+        refDescripcion: 'BUSO CON CAPOTA UNISEX NIÑOS',
+        color: 'Verde menta',
         vlrUnidad: 32.999,
         img: 'assets/img/Productos/MentaCapota.PNG'
       },
       {
-        refCodigo: 1,
-        talla: 'XL',
-        cantidad: 6,
-        color: 'Rojo',
+        refCodigo: 2,
+        refDescripcion: 'BUSO SIN CAPOTA',
+        color: 'Rosado barbie',
         vlrUnidad: 32.999,
         img: 'assets/img/Productos/BarbieCapota.PNG'
       },
       {
         refCodigo: 1,
-        talla: 'XL',
-        cantidad: 6,
-        color: 'Rojo',
+        refDescripcion: 'BUSO CON CAPOTA UNISEX',
+        color: 'Azul aguamarina',
         vlrUnidad: 32.999,
         img: 'assets/img/Productos/AguamarinaCapota.PNG'
       },
       {
-        refCodigo: 1,
-        talla: 'XL',
-        cantidad: 6,
-        color: 'Rojo',
+        refCodigo: 3,
+        refDescripcion: 'BUSO CON CAPOTA UNISEX NIÑO',
+        color: 'Azul Oscuro',
         vlrUnidad: 32.999,
         img: 'assets/img/Productos/AzulOscutoCapota.PNG'
       },
       {
-        refCodigo: 1,
-        talla: 'XL',
-        cantidad: 6,
-        color: 'Rojo',
+        refCodigo: 2,
+        refDescripcion: 'BUSO SIN CAPOTA UNISEX',
+        color: 'Verde Cali',
         vlrUnidad: 32.999,
         img: 'assets/img/Productos/CaliCapota.PNG'
       }
@@ -90,9 +89,10 @@ export class TiendaService {
     return this.referencias;
   }
 
-  getProductosXrefCod():productoPorIdReferencia[]
+  getProductosXrefCod(refCodigo:number):productoPorIdReferencia[]
   {
-    return this.refColor;
+    console.log('codigo - ' + refCodigo)
+    return this.refColor.filter( ref => ref.refCodigo == refCodigo);
   }
 
 }
@@ -100,14 +100,14 @@ export class TiendaService {
 export interface referencias {
   refCodigo: number;
   refDescripcion: string;
+  img: string;
 }
 
 export interface productoPorIdReferencia
 {
-  refCodigo: number,
-  talla: string,
-  cantidad: number,
-  color: string,
-  vlrUnidad: number,
-  img: string
+  refCodigo: number;
+  refDescripcion: string;
+  color: string;
+  vlrUnidad: number;
+  img: string;
 }

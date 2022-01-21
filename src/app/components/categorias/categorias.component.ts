@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { referencias, TiendaService } from '../../Services/tienda.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-categorias',
@@ -11,11 +11,18 @@ export class CategoriasComponent implements OnInit {
     
   referencias: referencias[] = [];
 
-  constructor(private _tiendaService:TiendaService,private router: Router) { }
+  constructor(private _tiendaService:TiendaService
+            ,private router: Router) { }
   
   ngOnInit(): void {
     this.referencias = this._tiendaService.getReferencias();
     console.log(this.referencias);
+  }
+
+  verProductos(index:number)
+  {
+    let refCodigo = this.referencias[index].refCodigo;
+    this.router.navigate(['/productos',refCodigo])
   }
 
 }

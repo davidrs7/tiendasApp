@@ -7,6 +7,7 @@ import { HeroeComponent } from './components/heroe/heroe.component';
 import { BuscarHeroeComponent } from './components/buscar-heroe/buscar-heroe.component';
 import { CategoriasComponent } from './components/categorias/categorias.component';
 import { ProductosComponent } from './components/productos/productos.component';
+import { ProductoTarjetaComponent } from './components/producto-tarjeta/producto-tarjeta.component';
 
 
 const APP_ROUTES: Routes = [
@@ -16,7 +17,8 @@ const APP_ROUTES: Routes = [
     { path: 'heroe/:id', component: HeroeComponent },
     { path: 'buscar-heroe/:Texto', component: BuscarHeroeComponent },
     { path: 'categorias', component: CategoriasComponent},
-    { path: 'productos', component: ProductosComponent},
+    { path: 'productos/:id', component: ProductosComponent},
+    { path: 'producto', component: ProductoTarjetaComponent},
     { path: '**',pathMatch: 'full', redirectTo : 'home'}
 
 
