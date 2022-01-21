@@ -1,13 +1,16 @@
-<h1>Productos <small>Busos con capota unisex</small> </h1>
+
+
+<h1> <button type="button" (click) = "Regresar()" class="btn btn-outline-danger">Regresar</button> Productos <small> </small> </h1>
 <hr>
  
 <div class="card-columns">
     
-    <div class="card animated fadeIn fast" *ngFor="let producto of productos;">
-        <img class="card-img-top">
-        <img class="card-img-top" [src]="producto.img" [alt]="producto.nombre">
+    <div class="card animated fadeIn fast"  *ngFor="let producto of productos;">
+   
+        <img class="card-img-top"  [src]="producto.img" [alt]="producto.refDescripcion" >
         <div class="card-body">
             <h5 class="card-title">$ {{ producto.vlrUnidad }}</h5> 
+            <P>{{ producto.refDescripcion }}</P>
             <br>
             <button type="button" class="btn btn-outline-primary" style="width: 100%;">ver mas...</button>
             <!--<a [routerLink]="['/heroe',i]" class="btn btn-outline-primary" style="width: 100%;">Ver mas...</a>-->
