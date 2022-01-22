@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { TiendaService } from 'src/app/Services/tienda.service';
 
 @Component({
   selector: 'app-producto-tarjeta',
@@ -7,7 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductoTarjetaComponent implements OnInit {
 
-  constructor() { }
+  producto: any[] = [];
+   
+  
+  
+  constructor(private _tiendaService: TiendaService
+             ,private router:Router
+             ,private activateRoute: ActivatedRoute) 
+            {
+              this.activateRoute.params.subscribe(params => 
+              {
+                this.producto = this._tiendaService.getProductoxIdColoryReferencia(params['RefCodigo'],params['colorCodigo']);
+              })    
+            }
 
   ngOnInit(): void {
   }

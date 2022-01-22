@@ -19,7 +19,7 @@ export class ProductosComponent implements OnInit {
                 this.activatedRoute.params.subscribe(params=>{
                   console.log(params['refCodigo']);
                   this.refCodigo = params['refCodigo'];
-                  this.productos = this._tiendaService.getProductosXrefCod(params['id']);
+                  this.productos = this._tiendaService.getProductosXrefCod(params['refCodigo']);
                 })
               }
 
@@ -29,6 +29,13 @@ export class ProductosComponent implements OnInit {
  Regresar()
  {
   this.router.navigate(['/categorias'])
+ }
+
+ verProducto(index: number)
+ {
+    let refCodigo = this.productos[index].refCodigo;
+    let colorCodigo = this.productos[index].codColor;
+    this.router.navigate(['/producto',refCodigo,colorCodigo])
  }
 
   

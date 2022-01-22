@@ -2,13 +2,13 @@
 <hr>
 <!-- *ngFor="let heroe of heroes; let i = index"-->
 <div class="card-columns">
-    <div class="card animated fadeIn fast" *ngFor="let referencia of referencias;">
+    <div class="card animated fadeIn fast" *ngFor="let referencia of referencias; let i = index;">
         <img class="card-img-top">
         <img class="card-img-top" [src]="referencia.img">
         <div class="card-body">
             <h5 class="card-title">{{ referencia.refDescripcion }}</h5> 
             <br>
-            <button type="button" class="btn btn-outline-primary" style="width: 100%;">Descubrir</button>
+            <button type="button" (click)="verProductos(i)" class="btn btn-outline-primary" style="width: 100%;">Descubrir</button>
             <!--<a [routerLink]="['/heroe',i]" class="btn btn-outline-primary" style="width: 100%;">Ver mas...</a>-->
         </div>
     </div>
