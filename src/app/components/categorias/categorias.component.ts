@@ -15,8 +15,7 @@ export class CategoriasComponent implements OnInit {
             ,private router: Router) { }
   
   ngOnInit(): void {
-    this.referencias = this._tiendaService.getReferencias();
-    console.log(this.referencias);
+    this.referencias = this._tiendaService.getReferencias(); 
   }
 
   verProductos(index:number)

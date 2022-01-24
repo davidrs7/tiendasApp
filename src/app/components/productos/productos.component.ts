@@ -9,17 +9,16 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ProductosComponent implements OnInit {
 
-  productos: any[] = [];
+  productos: any[] = []; 
   refCodigo: number;
-
   constructor(private _tiendaService:TiendaService
               ,private router: Router
               ,private activatedRoute: ActivatedRoute) 
               { 
-                this.activatedRoute.params.subscribe(params=>{
-                  console.log(params['refCodigo']);
-                  this.refCodigo = params['refCodigo'];
+                this.activatedRoute.params.subscribe(params=>{  
+                  this.refCodigo = params['refCodigo']
                   this.productos = this._tiendaService.getProductosXrefCod(params['refCodigo']);
+                  //console.log(this.productos);
                 })
               }
 
@@ -32,11 +31,9 @@ export class ProductosComponent implements OnInit {
  }
 
  verProducto(index: number)
- {
+ { 
     let refCodigo = this.productos[index].refCodigo;
-    let colorCodigo = this.productos[index].codColor;
-    this.router.navigate(['/producto',refCodigo,colorCodigo])
- }
-
-  
+    let colorCodigo = this.productos[index].codColor; 
+    this.router.navigate(['/producto',this.refCodigo,colorCodigo]);
+ }  
 }

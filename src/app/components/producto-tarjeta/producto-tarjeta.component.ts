@@ -19,7 +19,7 @@ export class ProductoTarjetaComponent implements OnInit {
             {
               this.activateRoute.params.subscribe(params => 
               {
-                this.producto = this._tiendaService.getProductoxIdColoryReferencia(params['RefCodigo'],params['colorCodigo']);
+                this.producto = this._tiendaService.getProductoxIdColoryReferencia(params['refCodigo'],params['colorCodigo']);
               })    
             }
 

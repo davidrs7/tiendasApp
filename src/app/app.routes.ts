@@ -18,7 +18,7 @@ const APP_ROUTES: Routes = [
     { path: 'buscar-heroe/:Texto', component: BuscarHeroeComponent },
     { path: 'categorias', component: CategoriasComponent},
     { path: 'productos/:refCodigo', component: ProductosComponent},
-    { path: 'producto/:refCodig/:colorCodigo', component: ProductoTarjetaComponent},
+    { path: 'producto/:refCodigo/:colorCodigo', component: ProductoTarjetaComponent},
     { path: '**',pathMatch: 'full', redirectTo : 'home'}
 
 
