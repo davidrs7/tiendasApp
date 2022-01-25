@@ -20,6 +20,9 @@ import { CategoriasComponent } from './components/categorias/categorias.componen
 import { TiendaService } from './Services/tienda.service';
 import { ProductosComponent } from './components/productos/productos.component';
 import { ProductoTarjetaComponent } from './components/producto-tarjeta/producto-tarjeta.component';
+import { InicioComponent } from './components/inicio/inicio.component';
+import { MediosPagoComponent } from './components/medios-pago/medios-pago.component';
+import { FooterComponent } from './components/shared/footer/footer/footer.component';
 
 
 @NgModule({
@@ -34,7 +37,10 @@ import { ProductoTarjetaComponent } from './components/producto-tarjeta/producto
     HeroeTarjetaComponent,
     CategoriasComponent,
     ProductosComponent,
-    ProductoTarjetaComponent
+    ProductoTarjetaComponent,
+    InicioComponent,
+    MediosPagoComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
