@@ -10,6 +10,7 @@ import { ProductosComponent } from './components/productos/productos.component';
 import { ProductoTarjetaComponent } from './components/producto-tarjeta/producto-tarjeta.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { MediosPagoComponent } from './components/medios-pago/medios-pago.component';
+import { CarritoComponent } from './components/carrito/carrito.component';
 
 
 const APP_ROUTES: Routes = [
@@ -21,7 +22,8 @@ const APP_ROUTES: Routes = [
     { path: 'medios-pago', component: MediosPagoComponent},
     { path: 'productos/:refCodigo', component: ProductosComponent},
     { path: 'producto/:refCodigo/:colorCodigo', component: ProductoTarjetaComponent},
-    { path: '**',pathMatch: 'full', redirectTo : 'home'}
+    { path: 'carrito', component: CarritoComponent},
+    { path: '**',pathMatch: 'full', redirectTo : 'categorias'}
 
 
     //{ path: 'path/:routeParam', component: MyComponent },

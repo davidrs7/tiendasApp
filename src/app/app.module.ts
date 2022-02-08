@@ -23,6 +23,7 @@ import { ProductoTarjetaComponent } from './components/producto-tarjeta/producto
 import { InicioComponent } from './components/inicio/inicio.component';
 import { MediosPagoComponent } from './components/medios-pago/medios-pago.component';
 import { FooterComponent } from './components/shared/footer/footer/footer.component';
+import { CarritoComponent } from './components/carrito/carrito.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { FooterComponent } from './components/shared/footer/footer/footer.compon
     ProductoTarjetaComponent,
     InicioComponent,
     MediosPagoComponent,
-    FooterComponent
+    FooterComponent,
+    CarritoComponent
   ],
   imports: [
     BrowserModule,
