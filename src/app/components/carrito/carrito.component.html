@@ -23,23 +23,25 @@
                 <div class="col">
                     <div class="row">
                         <div class="col">
-                            <i class="fa fa-minus-circle" aria-hidden="true"></i>
+                            <button class="btn btn-danger" (click) = "restarCantidad()"><i class="fa fa-minus-circle"
+                                    aria-hidden="true"></i></button>
                         </div>
                         <div class="col">
-                            <input class="text-center"  disabled type="number" width="50%" value="50" min="0" max="100" step="10"
-                                ditsabled style="border: none;" />
+                            <input class="text-center" disabled type="number" width="50%" [value]="cantidad" min="0" max="100"
+                                step="10" style="border: none;"  />
                         </div>
                         <div class="col">
-                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                            <button class="btn btn-success" (click) = "sumarCantidad()"><i class="fa fa-plus-circle"
+                                    aria-hidden="true"></i></button>
                         </div>
                     </div>
 
                 </div>
-                <div class="col">$ 32.999</div>
+                <div class="col">$ {{ precio * cantidad }}</div>
             </div>
             <hr />
             <div class="text-right">
-            <h3>Total: <small>$ 500.000</small></h3>
+                <h3>Total: <small>$ 500.000</small></h3>
             </div>
         </div>
     </div>

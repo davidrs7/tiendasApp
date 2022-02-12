@@ -190,6 +190,18 @@ export class TiendaService {
       {
         refCodigo: 1,
         refDescripcion: 'BUSO CON CAPOTA UNISEX',
+        codColor: 1,
+        color: 'Rojo',
+        img: 'assets/img/Productos/capota/RojoCapota.PNG',
+        tallaCodigo: 2,
+        talla: 'M',
+        cantidad: 6,
+        vlrUnidad: 32.999,
+        DescProducto: 'BUSO CON CAPOTA UNISEX ALGODON PERCHADO MONACO 220 GR DE EXCELENTE CALIDAD, CONFECCION CON PUNTADA DE SEGURIDAD'
+      },
+      {
+        refCodigo: 1,
+        refDescripcion: 'BUSO CON CAPOTA UNISEX',
         codColor: 2,
         color: 'Verde neon',
         img: 'assets/img/Productos/capota/NeonCapota.PNG',

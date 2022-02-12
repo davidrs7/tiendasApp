@@ -1,42 +1,48 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">
-
+<head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+</head>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">
-            <img src="../../../../assets/img/Productos/BusosBlindes.PNG"  height="40" alt="">
+
+            <a class="navbar-brand" href="#">
+                <img src="../../../../assets/img/Productos/BusosBlindes.PNG" height="40" alt="">
+            </a>
+
         </a>
 
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <!--active-->
-            <li class="nav-item " routerLinkActive="active">
-                <a class="nav-link" [routerLink]="['inicio']">Inicio <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item " routerLinkActive="active">
-                <a class="nav-link" [routerLink]="['home']">Quienes somos <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item " routerLinkActive="active">
-                <a class="nav-link" [routerLink]="['categorias']">Tienda<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item" routerLinkActive="active">
-                <a class="nav-link" [routerLink]="['medios-pago']">Medios de pago</a>
-            </li>
-            <li class="nav-item" routerLinkActive="active">
-                <a class="nav-link" [routerLink]="['about']">Contactenos</a>
-            </li>
-            <li class="nav-item" routerLinkActive="active">
-                <a class="nav-link" [routerLink]="['carrito']">Carrito</a>
-            </li>
-
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Buscar" (keyup.enter)="buscarHeroe(buscarTexto.value)" #buscarTexto>
-            <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="buscarHeroe(buscarTexto.value)" #buscarTexto> Search</button>
-        </form>
-
-    </div>
-</nav>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <!--active-->
+                <li class="nav-item " routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="['inicio']">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item " routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="['home']">Quienes somos <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item " routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="['categorias']">Tienda<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="['medios-pago']">Medios de pago</a>
+                </li>
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="['about']">Contactenos</a>
+                </li>
+            </ul>
+            <form>
+                <button type="button" [routerLink]="['carrito']" class="btn btn-success  position-relative">
+                    <i class="bi bi-bag"></i> Mis compras <b></b>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        0+
+                        <span class="visually-hidden">unread messages</span>
+                    </span>
+                </button>
+            </form>
+            
+        </div> 
+    </nav> 
