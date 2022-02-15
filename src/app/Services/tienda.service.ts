@@ -38,7 +38,7 @@ export class TiendaService {
         refDescripcion: 'BUSO CON CAPOTA UNISEX',
         codColor: 1,
         color: 'Rojo',
-        vlrUnidad: 32.999,
+        vlrUnidad: 33000,
         img: 'assets/img/Productos/capota/RojoCapota.PNG'
       },
       {
@@ -46,7 +46,7 @@ export class TiendaService {
         refDescripcion: 'BUSO CON CAPOTA UNISEX',
         codColor: 2,
         color: 'Verde neon',
-        vlrUnidad: 32.999,
+        vlrUnidad: 33000,
         img: 'assets/img/Productos/capota/NeonCapota.PNG'
       },
       {
@@ -54,7 +54,7 @@ export class TiendaService {
         refDescripcion: 'BUSO CON CAPOTA UNISEX NIÑOS',
         codColor: 3,
         color: 'Verde menta',
-        vlrUnidad: 32.999,
+        vlrUnidad: 33000,
         img: 'assets/img/Productos/capota/MentaCapota.PNG'
       },
       {
@@ -62,7 +62,7 @@ export class TiendaService {
         refDescripcion: 'BUSO SIN CAPOTA',
         codColor: 4,
         color: 'Rosado barbie',
-        vlrUnidad: 32.999,
+        vlrUnidad: 33000,
         img: 'assets/img/Productos/capota/BarbieCapota.PNG'
       },
       {
@@ -70,7 +70,7 @@ export class TiendaService {
         refDescripcion: 'BUSO CON CAPOTA UNISEX',
         codColor: 5,
         color: 'Azul aguamarina',
-        vlrUnidad: 32.999,
+        vlrUnidad: 33000,
         img: 'assets/img/Productos/capota/AguamarinaCapota.PNG'
       },
       {
@@ -78,7 +78,7 @@ export class TiendaService {
         refDescripcion: 'BUSO CON CAPOTA UNISEX NIÑO',
         codColor: 6,
         color: 'Azul Oscuro',
-        vlrUnidad: 32.999,
+        vlrUnidad: 33000,
         img: 'assets/img/Productos/capota/AzulOscutoCapota.PNG'
       },
       {
@@ -86,7 +86,7 @@ export class TiendaService {
         refDescripcion: 'BUSO SIN CAPOTA UNISEX',
         codColor: 7,
         color: 'Verde Cali',
-        vlrUnidad: 32.999,
+        vlrUnidad: 33000,
         img: 'assets/img/Productos/capota/CaliCapota.PNG'
       },
       //busos sin capota unisex
@@ -95,7 +95,7 @@ export class TiendaService {
         refDescripcion: 'BUSO CON sinCapota UNISEX',
         codColor: 1,
         color: 'Rojo',
-        vlrUnidad: 32.999,
+        vlrUnidad: 33000,
         img: 'assets/img/Productos/sinCapota/RojosinCapota.PNG'
       },
       {
@@ -103,7 +103,7 @@ export class TiendaService {
         refDescripcion: 'BUSO CON sinCapota UNISEX',
         codColor: 2,
         color: 'Amarillo',
-        vlrUnidad: 32.999,
+        vlrUnidad: 33000,
         img: 'assets/img/Productos/sinCapota/AmarillosinCapota.PNG'
       },
       {
@@ -111,7 +111,7 @@ export class TiendaService {
         refDescripcion: 'BUSO CON sinCapota UNISEX NIÑOS',
         codColor: 3,
         color: 'Verde menta',
-        vlrUnidad: 32.999,
+        vlrUnidad: 33000,
         img: 'assets/img/Productos/sinCapota/MentasinCapota.PNG'
       },
       {
@@ -119,7 +119,7 @@ export class TiendaService {
         refDescripcion: 'BUSO SIN CAPOTA',
         codColor: 4,
         color: 'Rosado barbie',
-        vlrUnidad: 32.999,
+        vlrUnidad: 33000,
         img: 'assets/img/Productos/sinCapota/BarbiesinCapota.PNG'
       },
       {
@@ -127,7 +127,7 @@ export class TiendaService {
         refDescripcion: 'BUSO CON sinCapota UNISEX',
         codColor: 5,
         color: 'Jaspe',
-        vlrUnidad: 32.999,
+        vlrUnidad: 33000,
         img: 'assets/img/Productos/sinCapota/JaspesinCapota.PNG'
       },
       {
@@ -135,7 +135,7 @@ export class TiendaService {
         refDescripcion: 'BUSO CON sinCapota UNISEX NIÑO',
         codColor: 6,
         color: 'Azul Oscuro',
-        vlrUnidad: 32.999,
+        vlrUnidad: 33000,
         img: 'assets/img/Productos/sinCapota/AzulOscutosinCapota.PNG'
       },
       {
@@ -143,7 +143,7 @@ export class TiendaService {
         refDescripcion: 'BUSO SIN CAPOTA UNISEX',
         codColor: 7,
         color: 'Verde Cali',
-        vlrUnidad: 32.999,
+        vlrUnidad: 33000,
         img: 'assets/img/Productos/sinCapota/CalisinCapota.PNG'     
       },
       {
@@ -151,7 +151,7 @@ export class TiendaService {
         refDescripcion: 'BUSO CON CAPOTA NIÑO UNISEX',
         codColor: 1,
         color: 'Rojo',
-        vlrUnidad: 32.999,
+        vlrUnidad: 33000,
         img: 'assets/img/Productos/niño/niños.PNG'    
       },
       {
@@ -159,7 +159,7 @@ export class TiendaService {
         refDescripcion: 'BUSO CON CAPOTA NIÑO UNISEX',
         codColor: 2,
         color: 'Amarillo',
-        vlrUnidad: 32.999,
+        vlrUnidad: 33000,
         img: 'assets/img/Productos/niño/niños.PNG'    
       },
       {
@@ -167,7 +167,7 @@ export class TiendaService {
         refDescripcion: 'BUSO CON CAPOTA NIÑO UNISEX',
         codColor: 3,
         color: 'Azul Rey',
-        vlrUnidad: 32.999,
+        vlrUnidad: 33000,
         img: 'assets/img/Productos/niño/niños.PNG'    
       },
 
@@ -184,7 +184,7 @@ export class TiendaService {
         tallaCodigo: 1,
         talla: 'S',
         cantidad: 6,
-        vlrUnidad: 32.999,
+        vlrUnidad: 33000,
         DescProducto: 'BUSO CON CAPOTA UNISEX ALGODON PERCHADO MONACO 220 GR DE EXCELENTE CALIDAD, CONFECCION CON PUNTADA DE SEGURIDAD'
       },
       {
@@ -196,7 +196,7 @@ export class TiendaService {
         tallaCodigo: 2,
         talla: 'M',
         cantidad: 6,
-        vlrUnidad: 32.999,
+        vlrUnidad: 33000,
         DescProducto: 'BUSO CON CAPOTA UNISEX ALGODON PERCHADO MONACO 220 GR DE EXCELENTE CALIDAD, CONFECCION CON PUNTADA DE SEGURIDAD'
       },
       {
@@ -208,7 +208,7 @@ export class TiendaService {
         tallaCodigo: 2,
         talla: 'S',
         cantidad: 6,
-        vlrUnidad: 32.999,
+        vlrUnidad: 33000,
         DescProducto: 'BUSO CON CAPOTA UNISEX ALGODON PERCHADO MONACO 220 GR DE EXCELENTE CALIDAD, CONFECCION CON PUNTADA DE SEGURIDAD'
       },
       {
@@ -220,7 +220,7 @@ export class TiendaService {
         tallaCodigo: 2,
         talla: 'S',
         cantidad: 6,
-        vlrUnidad: 32.999,
+        vlrUnidad: 33000,
         DescProducto: 'BUSO CON CAPOTA UNISEX ALGODON PERCHADO MONACO 220 GR DE EXCELENTE CALIDAD, CONFECCION CON PUNTADA DE SEGURIDAD'
       },
       {
@@ -232,7 +232,7 @@ export class TiendaService {
         tallaCodigo: 2,
         talla: 'S',
         cantidad: 6,
-        vlrUnidad: 32.999,
+        vlrUnidad: 33000,
         DescProducto: 'BUSO CON CAPOTA UNISEX ALGODON PERCHADO MONACO 220 GR DE EXCELENTE CALIDAD, CONFECCION CON PUNTADA DE SEGURIDAD'
       },
       {
@@ -244,7 +244,7 @@ export class TiendaService {
         tallaCodigo: 2,
         talla: 'S',
         cantidad: 6,
-        vlrUnidad: 32.999,
+        vlrUnidad: 33000,
         DescProducto: 'BUSO CON CAPOTA UNISEX ALGODON PERCHADO MONACO 220 GR DE EXCELENTE CALIDAD, CONFECCION CON PUNTADA DE SEGURIDAD'
       },
       {
@@ -256,7 +256,7 @@ export class TiendaService {
         tallaCodigo: 2,
         talla: 'S',
         cantidad: 6,
-        vlrUnidad: 32.999,
+        vlrUnidad: 33000,
         DescProducto: 'BUSO CON CAPOTA UNISEX ALGODON PERCHADO MONACO 220 GR DE EXCELENTE CALIDAD, CONFECCION CON PUNTADA DE SEGURIDAD'
       },
       {
@@ -268,7 +268,7 @@ export class TiendaService {
         tallaCodigo: 2,
         talla: 'S',
         cantidad: 6,
-        vlrUnidad: 32.999,
+        vlrUnidad: 33000,
         DescProducto: 'BUSO CON CAPOTA UNISEX ALGODON PERCHADO MONACO 220 GR DE EXCELENTE CALIDAD, CONFECCION CON PUNTADA DE SEGURIDAD'
       },
       {
@@ -280,7 +280,7 @@ export class TiendaService {
         tallaCodigo: 2,
         talla: 'S',
         cantidad: 6,
-        vlrUnidad: 32.999,
+        vlrUnidad: 33000,
         DescProducto: 'BUSO SIN CAPOTA UNISEX ALGODON PERCHADO MONACO 220 GR DE EXCELENTE CALIDAD, CONFECCION CON PUNTADA DE SEGURIDAD'
       },
       {
@@ -292,7 +292,7 @@ export class TiendaService {
         tallaCodigo: 2,
         talla: 'S',
         cantidad: 6,
-        vlrUnidad: 32.999,
+        vlrUnidad: 33000,
         DescProducto: 'BUSO SIN CAPOTA UNISEX ALGODON PERCHADO MONACO 220 GR DE EXCELENTE CALIDAD, CONFECCION CON PUNTADA DE SEGURIDAD'
       },
       {
@@ -304,7 +304,7 @@ export class TiendaService {
         tallaCodigo: 2,
         talla: 'S',
         cantidad: 6,
-        vlrUnidad: 32.999,
+        vlrUnidad: 33000,
         DescProducto: 'BUSO SIN CAPOTA UNISEX ALGODON PERCHADO MONACO 220 GR DE EXCELENTE CALIDAD, CONFECCION CON PUNTADA DE SEGURIDAD'
       },
       {
@@ -316,7 +316,7 @@ export class TiendaService {
         tallaCodigo: 2,
         talla: 'S',
         cantidad: 6,
-        vlrUnidad: 32.999,
+        vlrUnidad: 33000,
         DescProducto: 'BUSO SIN CAPOTA UNISEX ALGODON PERCHADO MONACO 220 GR DE EXCELENTE CALIDAD, CONFECCION CON PUNTADA DE SEGURIDAD'
       },
       {
@@ -328,7 +328,7 @@ export class TiendaService {
         tallaCodigo: 2,
         talla: 'S',
         cantidad: 6,
-        vlrUnidad: 32.999,
+        vlrUnidad: 33000,
         DescProducto: 'BUSO SIN CAPOTA UNISEX ALGODON PERCHADO MONACO 220 GR DE EXCELENTE CALIDAD, CONFECCION CON PUNTADA DE SEGURIDAD'
       },
       {
@@ -340,7 +340,7 @@ export class TiendaService {
         tallaCodigo: 2,
         talla: 'S',
         cantidad: 6,
-        vlrUnidad: 32.999,
+        vlrUnidad: 33000,
         DescProducto: 'BUSO SIN CAPOTA UNISEX ALGODON PERCHADO MONACO 220 GR DE EXCELENTE CALIDAD, CONFECCION CON PUNTADA DE SEGURIDAD'
       },
       {
@@ -352,7 +352,7 @@ export class TiendaService {
         tallaCodigo: 2,
         talla: 'S',
         cantidad: 6,
-        vlrUnidad: 32.999, 
+        vlrUnidad: 33000, 
         DescProducto: 'BUSO SIN CAPOTA UNISEX ALGODON PERCHADO MONACO 220 GR DE EXCELENTE CALIDAD, CONFECCION CON PUNTADA DE SEGURIDAD'
       },
       {
@@ -364,7 +364,7 @@ export class TiendaService {
         tallaCodigo: 13 ,
         talla: '14',
         cantidad: 6,
-        vlrUnidad: 32.999,
+        vlrUnidad: 33000,
         DescProducto: 'BUSO CON CAPOTA UNISEX ALGODON PERCHADO MONACO 220 GR DE EXCELENTE CALIDAD, CONFECCION CON PUNTADA DE SEGURIDAD'
       },
       {
@@ -376,7 +376,7 @@ export class TiendaService {
         tallaCodigo: 12,
         talla: '12',
         cantidad: 6,
-        vlrUnidad: 32.999,
+        vlrUnidad: 33000,
         DescProducto: 'BUSO CON CAPOTA NIÑO UNISEX ALGODON PERCHADO MONACO 220 GR DE EXCELENTE CALIDAD, CONFECCION CON PUNTADA DE SEGURIDAD'
       },
       {
@@ -388,7 +388,7 @@ export class TiendaService {
         tallaCodigo: 14,
         talla: '16',
         cantidad: 6,
-        vlrUnidad: 32.999,
+        vlrUnidad: 33000,
         DescProducto: 'BUSO CON CAPOTA NIÑO UNISEX ALGODON PERCHADO MONACO 220 GR DE EXCELENTE CALIDAD, CONFECCION CON PUNTADA DE SEGURIDAD'
       },
     ]
