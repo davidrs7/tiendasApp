@@ -11,22 +11,11 @@ export class ProductoTarjetaComponent implements OnInit {
 
   index: number;
   producto: any[] = [];
-  productoSeleccionado: any[] = [] ;
-  carrito: any[] =  [
-    {
-      refCodigo: 0,
-      refDescripcion: '',
-      codColor: 1,
-      color: '',
-      img: '',
-      tallaCodigo: 0,
-      talla: '',
-      cantidadEnviada: 0,
-      vlrUnidad: 0,
-      vlrTotal: 0,
-      DescProducto: ''
-    }];
-  productoAdicional: any[] = []; 
+  productoSeleccionado: any[] = [];
+  carritoActual: any[] = [];
+  carrito: {} = {}
+  ;
+  productoAdicional: any[] = [];
 
   @ViewChild("inputZip") inputZip: ElementRef;
   tallaSelected: boolean = false;
@@ -44,7 +33,7 @@ export class ProductoTarjetaComponent implements OnInit {
   }
 
   asignarTalla(i: number) {
-     //console.log(this.producto[i]);
+    //console.log(this.producto[i]);
     this.index = i;
     this.tallaSelected = true;
   }
@@ -65,28 +54,30 @@ export class ProductoTarjetaComponent implements OnInit {
     }
   }
 
-  addCarrito()
-  {  
-    //console.log(this.producto[this.index]);
-    this.carrito =
-    [
-      {
-      refCodigo: this.producto[this.index].refCodigo,
-      refDescripcion: this.producto[this.index].refDescripcion,
-      codColor: this.producto[this.index].codColor,
-      color: this.producto[this.index].color,
-      img: this.producto[this.index].img,
-      tallaCodigo: this.producto[this.index].tallaCodigo,
-      talla: this.producto[this.index].talla,
-      cantidadEnviada: this.inputZip.nativeElement.value,
-      vlrUnidad: this.producto[this.index].vlrUnidad,
-      vlrTotal: this.producto[this.index].vlrUnidad * this.inputZip.nativeElement.value,
-      DescProducto: this.producto[this.index].DescProducto
-      }
-    ]
+  addCarrito() { 
 
-    //console.log(this.carrito);
-    localStorage.setItem('productoCarrito', JSON.stringify(this.carrito)); 
+    this.carritoActual = JSON.parse(localStorage.getItem('productoCarrito')) != null ? JSON.parse(localStorage.getItem('productoCarrito')) : this.carritoActual;
+
+    this.carrito = 
+        {
+          refCodigo: this.producto[this.index].refCodigo,
+          refDescripcion: this.producto[this.index].refDescripcion,
+          codColor: this.producto[this.index].codColor,
+          color: this.producto[this.index].color,
+          img: this.producto[this.index].img,
+          tallaCodigo: this.producto[this.index].tallaCodigo,
+          talla: this.producto[this.index].talla,
+          cantidadEnviada: this.inputZip.nativeElement.value,
+          vlrUnidad: this.producto[this.index].vlrUnidad,
+          vlrTotal: this.producto[this.index].vlrUnidad * this.inputZip.nativeElement.value,
+          DescProducto: this.producto[this.index].DescProducto
+        } ;
+ 
+      this.carritoActual.push(this.carrito);  
+
+
+    console.log(this.carritoActual);
+    localStorage.setItem('productoCarrito', JSON.stringify(this.carritoActual));
   }
 
 }

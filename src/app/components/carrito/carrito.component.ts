@@ -18,7 +18,7 @@ export class CarritoComponent implements OnInit {
       currency: "COP"
     });
 
-    this.productos = JSON.parse(localStorage.getItem('productoCarrito'));
+    this.productos = JSON.parse(localStorage.getItem('productoCarrito')) != null ? JSON.parse(localStorage.getItem('productoCarrito')) : this.productos ;
     this.calcularTotalFactura();
     
    }
