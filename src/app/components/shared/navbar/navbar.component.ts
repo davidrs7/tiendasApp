@@ -8,11 +8,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
+  numProductos:number;
   constructor(private _heroesService:HeroesService,
     private router: Router) { }
 
   ngOnInit(): void {
+    this.numProductos = parseInt(localStorage.getItem('notificacion'));
   }
 
 
