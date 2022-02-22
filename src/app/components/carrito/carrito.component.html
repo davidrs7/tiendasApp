@@ -42,9 +42,72 @@
             </div> 
             <div class="text-center">
                 <h3>Total: <small>$ {{totalFactura}}</small></h3>
+             
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalMetodoEntrega"><i class="fa fa-shopping-cart"
+                    aria-hidden="true"></i> Finalizar compra</button>
             </div>
         </div>
     </div> 
+
+    <div class="modal fade" id="modalMetodoEntrega" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Metodo de entrega</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Estimado cliente estos son nuestros metodos de entrega:<br/>
+              <li>Domicilio Bogotá: Tiene un costo $ 10.000 para la ciudad de bogota, pago contra entrega.</li>
+              <li>Domicilio nacional: se coordina con la transportadora interrapidisimo.</li>
+              <li>Retiro en tienda: Puedes acercarte a nuestro punto de fabrica a retirar tu producto.</li>
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary"data-bs-toggle="modal" data-bs-target="#modalDatosCliente">Domicilio</button>
+              <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#modalDatosCliente">Envio nacional</button>
+              <button type="button" class="btn btn-primary"(click)="FinalizarPedido(1)" >Retiro en tienda</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="modal fade" id="modalDatosCliente" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Datos para envío:</h5>
+            </div>
+            <div class="modal-body"> 
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingNombres" placeholder="Nombres">
+                    <label for="floatingNombres">Nombres y apellidos</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingTelefono" placeholder="Telefono">
+                    <label for="floatingTelefono">Telefono celular</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingCuidad" placeholder="Cuidad">
+                    <label for="floatingCuidad">Cuidad</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingDireccion" placeholder="Direccion">
+                    <label for="floatingDireccion">Direccion</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingBarrio" placeholder="Barrio">
+                    <label for="floatingBarrio">Barrio - localidad</label>
+                  </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success" (click)="FinalizarPedido(2)">Enviar pedido</button> 
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Regresar</button> 
+            </div>
+          </div>
+        </div>
+      </div>
 
 </body>
 

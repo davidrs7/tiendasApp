@@ -32,10 +32,11 @@
       </div>
       <div class="form-group col-md-4">
         <button class="btn btn-outline-danger" (click)="validarDisponibilidad()"><i class="fa fa-cart-plus"
-            aria-hidden="true"></i> Agregar al carrito</button>
-      </div>
-
+            aria-hidden="true"></i> Agregar al carrito
+        </button> 
+      </div> 
     </div>
+    <a [routerLink]="['/carrito']" class="btn btn-outline-success btn-block">Ir al carrito</a>
     <hr>
     <p>
       {{producto[0].DescProducto}}
@@ -51,5 +52,7 @@
       </div>
 
     </div>
-  </div>
+  </div> 
 </div>
+
+

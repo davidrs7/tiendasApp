@@ -10,12 +10,20 @@ import { Router } from '@angular/router';
 export class NavbarComponent implements OnInit {
   numProductos:number;
   constructor(private _heroesService:HeroesService,
-    private router: Router) { }
+    private router: Router) {
+        
+ 
+     }
 
   ngOnInit(): void {
-    this.numProductos = parseInt(localStorage.getItem('notificacion'));
+    this.validaNotificacion();
   }
 
+
+  validaNotificacion(){ 
+    let numprod= localStorage.getItem('notificacion');
+    this.numProductos = numprod == null ? 0 : parseInt(numprod);
+  }
 
   buscarHeroe (Texto:string){
         console.log(Texto)
