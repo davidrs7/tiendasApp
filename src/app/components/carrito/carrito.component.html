@@ -43,13 +43,13 @@
             <div class="text-center">
                 <h3>Total: <small>$ {{totalFactura}}</small></h3>
              
-                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalMetodoEntrega"><i class="fa fa-shopping-cart"
+                <button class="btn btn-success" [disabled]="validaProductos()" data-bs-toggle="modal" data-bs-target="#modalMetodoEntrega"><i class="fa fa-shopping-cart"
                     aria-hidden="true"></i> Finalizar compra</button>
             </div>
         </div>
     </div> 
 
-    <div class="modal fade" id="modalMetodoEntrega" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade"  id="modalMetodoEntrega" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -81,23 +81,23 @@
             </div>
             <div class="modal-body"> 
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingNombres" placeholder="Nombres">
+                    <input type="text" class="form-control" id="floatingNombres" placeholder="Nombres" #floatingNombres>
                     <label for="floatingNombres">Nombres y apellidos</label>
                   </div>
                   <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingTelefono" placeholder="Telefono">
+                    <input type="text" class="form-control" id="floatingTelefono" placeholder="Telefono" #floatingTelefono>
                     <label for="floatingTelefono">Telefono celular</label>
                   </div>
                   <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingCuidad" placeholder="Cuidad">
+                    <input type="text" class="form-control" id="floatingCuidad" placeholder="Cuidad" #floatingCuidad> 
                     <label for="floatingCuidad">Cuidad</label>
                   </div>
                   <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingDireccion" placeholder="Direccion">
+                    <input type="text" class="form-control" id="floatingDireccion" placeholder="Direccion" #floatingDireccion>
                     <label for="floatingDireccion">Direccion</label>
                   </div>
                   <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingBarrio" placeholder="Barrio">
+                    <input type="text" class="form-control" id="floatingBarrio" placeholder="Barrio" #floatingBarrio>
                     <label for="floatingBarrio">Barrio - localidad</label>
                   </div>
             </div>
