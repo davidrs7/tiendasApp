@@ -1,6 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter, ElementRef, ViewChild } from '@angular/core'; 
+import { Component, OnInit, Input, Output, EventEmitter, ElementRef, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
- 
+
 
 @Component({
   selector: 'app-carrito',
@@ -18,9 +18,12 @@ export class CarritoComponent implements OnInit {
   @ViewChild("floatingCuidad") floatingCuidad: ElementRef;
   @ViewChild("floatingDireccion") floatingDireccion: ElementRef;
   @ViewChild("floatingBarrio") floatingBarrio: ElementRef;
+  @ViewChild("modalDatosCliente") modalDatosCliente: ElementRef;
+  @ViewChild("modalMetodoEntrega") modalMetodoEntrega: ElementRef;
+
 
   constructor(private router: Router
-    ,private activatedRoute: ActivatedRoute) {
+    , private activatedRoute: ActivatedRoute) {
     this.precio.toLocaleString("es-CO", {
       style: "currency",
       currency: "COP"
@@ -69,17 +72,17 @@ export class CarritoComponent implements OnInit {
     }
   }
 
-  ActualizaStorage() { 
+  ActualizaStorage() {
 
-    this.productos.length == 0 ?  (localStorage.removeItem('productoCarrito'),localStorage.removeItem('notificacion') ) :  (localStorage.setItem('productoCarrito', JSON.stringify(this.productos)),localStorage.setItem('notificacion', this.productos.length.toString()));
+    this.productos.length == 0 ? (localStorage.removeItem('productoCarrito'), localStorage.removeItem('notificacion')) : (localStorage.setItem('productoCarrito', JSON.stringify(this.productos)), localStorage.setItem('notificacion', this.productos.length.toString()));
     ;
   }
 
-  validaProductos():boolean{ 
-    let resp = false; 
-   localStorage.getItem('productoCarrito') == null  ?  resp = true :  resp;
+  validaProductos(): boolean {
+    let resp = false;
+    localStorage.getItem('productoCarrito') == null ? resp = true : resp;
 
-      return resp;
+    return resp;
 
   }
 
@@ -90,60 +93,65 @@ export class CarritoComponent implements OnInit {
       let cadenaProductos = this.cadenaProductos();
       var redirection = 'https://api.whatsapp.com/send?phone= ' + numeroWspBlinders + '&text=Hola%20este%20es%20mi%20pedido:%20%F0%9F%91%95%F0%9F%91%95%F0%9F%91%95%0A' + this.cadenaProductos() + this.cadenaMetodoEntrega(metodoEntrega);
       this.limpiarFormulario();
-      alert('Gracias por tu compra! ahora vas a ser redirigido a nuestro whatsapp para confirmar tu orden')
+      alert('Gracias por tu compra! ahora vas a ser redirigido a nuestro whatsapp para confirmar tu orden');
       window.open(redirection);
+
+
     }
   }
   limpiarFormulario() {
     this.floatingNombres.nativeElement.value = '',
-    this.floatingTelefono.nativeElement.value = '',
-    this.floatingDireccion.nativeElement.value = '',
-    this.floatingCuidad.nativeElement.value = '',
-    this.floatingBarrio.nativeElement.value = '';
+      this.floatingTelefono.nativeElement.value = '',
+      this.floatingDireccion.nativeElement.value = '',
+      this.floatingCuidad.nativeElement.value = '',
+      this.floatingBarrio.nativeElement.value = '';
     localStorage.removeItem('productoCarrito');
     localStorage.removeItem('notificacion');
     this.router.navigate(['/categorias']);
+    let removeModals = "$('.modal-backdrop').remove();";
+    let F = new Function(removeModals);
+    F();
   }
 
   validaCamposForm(): boolean {
     let formValido = true;
-    
+
 
     if (this.floatingNombres.nativeElement.value.length < 5) {
       this.floatingNombres.nativeElement.classList.add('is-invalid');
       return false;
     } else {
-      this.floatingNombres.nativeElement.classList.remove('is-invalid'); 
-    } 
+      this.floatingNombres.nativeElement.classList.remove('is-invalid');
+    }
 
     if (this.floatingTelefono.nativeElement.value.length < 5) {
       this.floatingTelefono.nativeElement.classList.add('is-invalid');
       return false;
     } else {
-      this.floatingTelefono.nativeElement.classList.remove('is-invalid'); 
+      this.floatingTelefono.nativeElement.classList.remove('is-invalid');
     }
 
     if (this.floatingDireccion.nativeElement.value.length < 5) {
       this.floatingDireccion.nativeElement.classList.add('is-invalid');
       return false;
     } else {
-      this.floatingDireccion.nativeElement.classList.remove('is-invalid'); 
+      this.floatingDireccion.nativeElement.classList.remove('is-invalid');
     }
 
     if (this.floatingCuidad.nativeElement.value.length < 5) {
       this.floatingCuidad.nativeElement.classList.add('is-invalid');
       return false;
     } else {
-      this.floatingCuidad.nativeElement.classList.remove('is-invalid'); 
+      this.floatingCuidad.nativeElement.classList.remove('is-invalid');
     }
 
     if (this.floatingBarrio.nativeElement.value.length < 5) {
       this.floatingBarrio.nativeElement.classList.add('is-invalid');
       return false;
     } else {
-      this.floatingBarrio.nativeElement.classList.remove('is-invalid'); 
+      this.floatingBarrio.nativeElement.classList.remove('is-invalid');
     }
- 
+
     return formValido;
   }
 

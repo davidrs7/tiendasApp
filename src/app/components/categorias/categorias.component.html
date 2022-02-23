@@ -4,7 +4,7 @@
 <div class="card-columns">
     <div class="card animated fadeIn fast" *ngFor="let referencia of referencias; let i = index;">
         <img class="card-img-top">
-        <img class="card-img-top" [src]="referencia.img">
+        <a (click)="verProductos(i)">   <img class="card-img-top" [src]="referencia.img"> </a>     
         <div class="card-body">
             <h5 class="card-title">{{ referencia.refDescripcion }}</h5> 
             <br>

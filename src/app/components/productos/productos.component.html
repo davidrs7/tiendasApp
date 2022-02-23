@@ -7,7 +7,7 @@
     
     <div class="card animated fadeIn fast"  *ngFor="let producto of productos; let i = index;">
    
-        <img class="card-img-top"  [src]="producto.img" [alt]="producto.refDescripcion" >
+        <a (click)="verProducto(i)"> <img class="card-img-top"  [src]="producto.img" [alt]="producto.refDescripcion" ></a>
         <div class="card-body"> 
             <h4>{{producto.color}}</h4>
             <p class="card-title">$ {{ producto.vlrUnidad }}</p> 

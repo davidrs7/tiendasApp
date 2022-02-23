@@ -43,13 +43,13 @@
             <div class="text-center">
                 <h3>Total: <small>$ {{totalFactura}}</small></h3>
              
-                <button class="btn btn-success" [disabled]="validaProductos()" data-bs-toggle="modal" data-bs-target="#modalMetodoEntrega"><i class="fa fa-shopping-cart"
+                <button class="btn btn-success" [disabled]="validaProductos()" data-bs-toggle="modal" data-bs-target="#modalMetodoEntrega" ><i class="fa fa-shopping-cart"
                     aria-hidden="true"></i> Finalizar compra</button>
             </div>
         </div>
     </div> 
 
-    <div class="modal fade"  id="modalMetodoEntrega" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade"  id="modalMetodoEntrega" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" #modalMetodoEntrega>
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -73,7 +73,7 @@
       </div>
 
 
-      <div class="modal fade" id="modalDatosCliente" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="modalDatosCliente" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" #modalDatosCliente>
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
