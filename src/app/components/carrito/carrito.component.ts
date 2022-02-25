@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, ElementRef, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -24,6 +25,7 @@ export class CarritoComponent implements OnInit {
 
   constructor(private router: Router
     , private activatedRoute: ActivatedRoute) {
+
     this.precio.toLocaleString("es-CO", {
       style: "currency",
       currency: "COP"
@@ -54,7 +56,12 @@ export class CarritoComponent implements OnInit {
     console.log(this.productos[i]);
 
     if (parseInt(this.productos[i].cantidadEnviada) + 1 > this.productos[i].cantidadDisponible) {
-      alert("Excede cantidad disponible en el inventario")
+      Swal.fire({
+        title: 'Error!',
+        text: 'No contamos con esa cantidad en nuestro inventario',
+        icon: 'error',
+        confirmButtonText: 'Cool'
+      });
     }
     this.productos[i].cantidadEnviada = parseInt(this.productos[i].cantidadEnviada) + 1 > this.productos[i].cantidadDisponible ? this.productos[i].cantidadDisponible : parseInt(this.productos[i].cantidadEnviada) + 1;
 
@@ -92,11 +99,19 @@ export class CarritoComponent implements OnInit {
       let numeroWspBlinders = '+573124379303';
       let cadenaProductos = this.cadenaProductos();
       var redirection = 'https://api.whatsapp.com/send?phone= ' + numeroWspBlinders + '&text=Hola%20este%20es%20mi%20pedido:%20%F0%9F%91%95%F0%9F%91%95%F0%9F%91%95%0A' + this.cadenaProductos() + this.cadenaMetodoEntrega(metodoEntrega);
-      this.limpiarFormulario();
-      alert('Gracias por tu compra! ahora vas a ser redirigido a nuestro whatsapp para confirmar tu orden');
-      window.open(redirection);
-
-
+      
+      Swal.fire({
+        title: 'Gracias por tu compra!',
+        text: 'En este momento confirmaremos tu orden por nuestro whatsapp.',
+        icon: 'success',
+        confirmButtonText: 'Vamos!'
+      }).then((result) => {  
+        /* Read more about isConfirmed, isDenied below */  
+          if (result.isConfirmed) {    
+            window.open(redirection);
+            this.limpiarFormulario();
+          } 
+      }); 
     }
   }
   limpiarFormulario() {
@@ -192,7 +207,7 @@ export class CarritoComponent implements OnInit {
 
   cadenaDatosDomicilio(): string {
     let cadena = "";
-    cadena = '-----------------------------------------------------------%0AMis%20datos%20son:%20%F0%9F%93%9D%F0%9F%93%9D%0A' + 'Nombres:' + '%20' + this.floatingNombres.nativeElement.value.replace(/\s/g, '%20') + '%0ATelefono:' + '%20' + this.floatingTelefono.nativeElement.value.replace(/\s/g, '%20') + '%0ACiudad:' + '%20' + this.floatingCuidad.nativeElement.value.replace(/\s/g, '%20') + '%0ADireccion:' + '%20' + this.floatingDireccion.nativeElement.value.replace(/\s/g, '%20') + '%0ABarrio%20-%20Localidad:' + '%20' + this.floatingBarrio.nativeElement.value.replace(/\s/g, '%20%0A');
+    cadena = '-----------------------------------------------------------%0AMis%20datos%20son:%20%F0%9F%93%9D%F0%9F%93%9D%0A' + 'Nombres:' + '%20' + this.floatingNombres.nativeElement.value.replace(/\s/g, '%20') + '%0ATelefono:' + '%20' + this.floatingTelefono.nativeElement.value.replace(/\s/g, '%20') + '%0ACiudad:' + '%20' + this.floatingCuidad.nativeElement.value.replace(/\s/g, '%20') + '%0ADireccion:' + '%20' + this.floatingDireccion.nativeElement.value.replace(/\s/g, '%20') + '%0ABarrio%20-%20Localidad:' + '%20' + this.floatingBarrio.nativeElement.value.replace(/\s/g, '%20');
     return cadena;
   }
 

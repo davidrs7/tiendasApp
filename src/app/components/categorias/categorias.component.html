@@ -6,9 +6,8 @@
         <img class="card-img-top">
         <a (click)="verProductos(i)">   <img class="card-img-top" [src]="referencia.img"> </a>     
         <div class="card-body">
-            <h5 class="card-title">{{ referencia.refDescripcion }}</h5> 
-            <br>
-            <button type="button" (click)="verProductos(i)" class="btn btn-outline-primary" style="width: 100%;">Descubrir</button>
+            <h5 class="card-title">{{ referencia.refDescripcion }}</h5>  
+            <button type="button" (click)="verProductos(i)" class="btn btn-outline-primary" style="width: 100%;"><i class="bi bi-bag"></i> Comprar</button>
             <!--<a [routerLink]="['/heroe',i]" class="btn btn-outline-primary" style="width: 100%;">Ver mas...</a>-->
         </div>
     </div>

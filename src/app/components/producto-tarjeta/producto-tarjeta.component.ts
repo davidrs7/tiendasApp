@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild, Input, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TiendaService } from 'src/app/Services/tienda.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-producto-tarjeta',
@@ -39,17 +40,37 @@ export class ProductoTarjetaComponent implements OnInit {
 
   validarDisponibilidad() {
     //console.log('abc-' + this.producto[0].cantidad);
-    if (this.inputZip.nativeElement.value == 0) {
-      alert('Por favor ingrese la cantidad')
+    if (this.inputZip.nativeElement.value == 0) { 
+      Swal.fire({
+        title: 'Error!',
+        text: 'Por favor ingresa una cantidad',
+        icon: 'error',
+        confirmButtonText: 'Regresar'
+      });
     } else if (this.inputZip.nativeElement.value < 0) {
-      alert('Cantidad ingresada no valida')
+      Swal.fire({
+        title: 'Error!',
+        text: 'La cantidad que ingresaste no es valida',
+        icon: 'error',
+        confirmButtonText: 'Regresar'
+      });
     } else if (this.inputZip.nativeElement.value > this.producto[0].cantidad) {
-      alert('No contamos con esta cantidad en nuestro inventario')
+      Swal.fire({
+        title: 'Error!',
+        text: 'No contamos con esa cantidad en nuesto inventario',
+        icon: 'error',
+        confirmButtonText: 'Regresar'
+      });
     } else if (this.tallaSelected) {
       this.addCarrito();
     }
     else {
-      alert('Por favor seleccione una talla')
+      Swal.fire({
+        title: 'Error!',
+        text: 'Por favor selecciona una talla',
+        icon: 'error',
+        confirmButtonText: 'Regresar'
+      });
     }
   }
 
@@ -80,9 +101,19 @@ export class ProductoTarjetaComponent implements OnInit {
 
     if (validaProducto.length == 0) {
       this.carritoActual.push(this.carrito);
-      alert("Agregado exitosamente!")
+      Swal.fire({
+        title: 'Bien hecho!',
+        text: 'Producto agregado con exito',
+        icon: 'success',
+        confirmButtonText: 'Seguir comprando'
+      });
     } else {
-      alert("este producto ya existe en el carrito!")
+      Swal.fire({
+        title: 'Información!',
+        text: 'Este producto ya existe en el carrito',
+        icon: 'info',
+        confirmButtonText: 'Regresar'
+      });
     }
 
     localStorage.setItem('productoCarrito', JSON.stringify(this.carritoActual));
