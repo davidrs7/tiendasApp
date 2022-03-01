@@ -1,6 +1,6 @@
 
 
-<h1> <button type="button" (click) = "Regresar()" class="btn btn-outline-danger"><i class="fa fa-arrow-left" aria-hidden="true"></i> Regresar</button> Productos <small> </small> </h1>
+<h1> <button type="button" (click) = "Regresar()" class="btn btn-outline-danger"><i class="fa fa-arrow-left" aria-hidden="true"></i> Regresar</button> Productos disponibles <small> </small> </h1>
 <hr>
  
 <div class="card-columns">
@@ -10,7 +10,7 @@
         <a (click)="verProducto(i)"> <img class="card-img-top" [src]="producto.img" [alt]="producto.refDescripcion" ></a>
         <div class="card-body"> 
             <h4>{{producto.color}}</h4>
-            <p class="card-title">$ {{ producto.vlrUnidad }}</p> 
+            <p class="card-title">{{ producto.vlrUnidad | currency: 'COP' :'symbol-narrow':'2.0-2'}}</p> 
             <P>{{ producto.refDescripcion }}</P>
             <br>
             <button type="button" (click)="verProducto(i)" class="btn btn-outline-primary" style="width: 100%;"><i class="bi bi-bag"></i> Comprar</button>

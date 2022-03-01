@@ -1,3 +1,4 @@
+import { CurrencyPipe } from '@angular/common';
 import { Component, OnInit, Input, Output, EventEmitter, ElementRef, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
@@ -24,7 +25,8 @@ export class CarritoComponent implements OnInit {
 
 
   constructor(private router: Router
-    , private activatedRoute: ActivatedRoute) {
+    , private activatedRoute: ActivatedRoute
+    ,private pipeCurrency: CurrencyPipe) {
 
     this.precio.toLocaleString("es-CO", {
       style: "currency",
@@ -58,9 +60,9 @@ export class CarritoComponent implements OnInit {
     if (parseInt(this.productos[i].cantidadEnviada) + 1 > this.productos[i].cantidadDisponible) {
       Swal.fire({
         title: 'Error!',
-        text: 'No contamos con esa cantidad en nuestro inventario',
+        text: 'Esta cantidad supera nuestra disponibilidad',
         icon: 'error',
-        confirmButtonText: 'Cool'
+        confirmButtonText: 'Ok'
       });
     }
     this.productos[i].cantidadEnviada = parseInt(this.productos[i].cantidadEnviada) + 1 > this.productos[i].cantidadDisponible ? this.productos[i].cantidadDisponible : parseInt(this.productos[i].cantidadEnviada) + 1;
@@ -173,7 +175,7 @@ export class CarritoComponent implements OnInit {
   cadenaProductos(): string {
     let cadenaRetorno = "";
     for (let i = 0; i < this.productos.length; i++) {
-      cadenaRetorno += this.productos[i].cantidadEnviada + '%20' + this.productos[i].refDescripcion.replace(/\s/g, '%20') + '%20' + this.productos[i].color + '%20Talla%20' + this.productos[i].talla + '%20...' + '%20Valor%20unidad:%20$' + this.productos[i].vlrUnidad + '%20%0A'
+      cadenaRetorno += this.productos[i].cantidadEnviada + '%20' + this.productos[i].refDescripcion.replace(/\s/g, '%20') + '%20' + this.productos[i].color + '%20Talla%20' + this.productos[i].talla + '%20...' + '%20Valor%20unidad:%20' +   this.pipeCurrency.transform(this.productos[i].vlrUnidad, 'COP' ,'symbol-narrow','2.0-2')	 + '%20%0A'
     }
     return cadenaRetorno;
   }
@@ -195,13 +197,13 @@ export class CarritoComponent implements OnInit {
   }
   costoDomicilio(): string {
 
-    let costoDomicilio = 'domicilio%20...%20Valor%20unidad:%20$' + this.valorDomicilio + '%0A';
+    let costoDomicilio = 'domicilio%20...%20Valor%20unidad:%20' + this.pipeCurrency.transform(this.valorDomicilio, 'COP' ,'symbol-narrow','2.0-2') + '%0A';
     this.totalFactura += this.valorDomicilio;
-    return costoDomicilio;
+    return  costoDomicilio;  
   }
 
   CadenaTotalPago() {
-    let cadenaTotal = "Total%20a%20pagar%20=%20%20$" + this.totalFactura + "%20%0A";
+    let cadenaTotal = "Total%20a%20pagar%20=%20%20" + this.pipeCurrency.transform(this.totalFactura, 'COP' ,'symbol-narrow','2.0-2') + "%20%0A";
     return cadenaTotal;
   }
 

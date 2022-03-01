@@ -14,12 +14,12 @@
     <p>
       {{producto[0].DescProducto}}
     </p>
-    <h3>${{producto[0].vlrUnidad}}</h3>
+    <h3>{{producto[0].vlrUnidad | currency: 'COP' :'symbol-narrow':'2.0-2' }}</h3>
     <hr>
     <br>
 
 
-    <h2>Tallas</h2>
+    <h2>Tallas disponibles</h2>
     <div class="form-check form-check-inline" *ngFor="let product of producto; let i = index;">
       <input class="form-check-input" type="radio" (click)="asignarTalla(i)" name="inlineRadioOptions"
         id="{{product.tallaCodigo}}" value="{{product.tallaCodigo}}">

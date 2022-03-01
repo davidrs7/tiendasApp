@@ -24,6 +24,8 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { MediosPagoComponent } from './components/medios-pago/medios-pago.component';
 import { FooterComponent } from './components/shared/footer/footer/footer.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
+import { CurrencyPipe } from '@angular/common';
+ 
 
 
 @NgModule({
@@ -43,15 +45,17 @@ import { CarritoComponent } from './components/carrito/carrito.component';
     MediosPagoComponent,
     FooterComponent,
     CarritoComponent
+      
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, 
     APP_ROUTING
   ],
   //aqui van los servicios
   providers: [
     HeroesService,
-    TiendaService
+    TiendaService,
+    CurrencyPipe
   ],
   bootstrap: [AppComponent]
 })

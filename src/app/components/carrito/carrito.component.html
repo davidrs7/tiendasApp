@@ -37,11 +37,11 @@
                     </div>
 
                 </div>
-                <div class="col">$ {{ producto.vlrTotal }}</div>
+                <div class="col">{{ producto.vlrTotal | currency: 'COP' :'symbol-narrow':'2.0-2' }}</div>
                 <hr/>
             </div> 
             <div class="text-center">
-                <h3>Total: <small>$ {{totalFactura}}</small></h3>
+                <h3>Total: <small>{{totalFactura | currency: 'COP' :'symbol-narrow':'2.0-2'}}</small></h3>
              
                 <button class="btn btn-success" [disabled]="validaProductos()" data-bs-toggle="modal" data-bs-target="#modalMetodoEntrega" ><i class="fa fa-shopping-cart"
                     aria-hidden="true"></i> Finalizar compra</button>
