@@ -64,9 +64,9 @@
               
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary"data-bs-toggle="modal" data-bs-target="#modalDatosCliente">Domicilio</button>
-              <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#modalDatosCliente">Envio nacional</button>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDatosCliente" (click)="FinalizarPedido(1)" >Retiro en tienda</button>
+              <button type="button" class="btn btn-primary"data-bs-toggle="modal" data-bs-target="#modalDatosCliente" (click)="tipoDomicilio(2)" >Domicilio</button>
+              <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#modalDatosCliente" (click)="tipoDomicilio(3)">Envio nacional</button>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDatosCliente" (click)="tipoDomicilio(1)" >Retiro en tienda</button>
             </div>
           </div>
         </div>
@@ -77,7 +77,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Datos para envío:</h5>
+              <h5 class="modal-title" id="exampleModalLabel">{{DescTipEntrega}}</h5>
             </div>
             <div class="modal-body"> 
                 <div class="form-floating mb-3">

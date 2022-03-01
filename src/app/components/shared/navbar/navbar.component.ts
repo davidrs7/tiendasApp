@@ -28,8 +28,11 @@ export class NavbarComponent implements OnInit {
   }
 
   notifica(){
-    this.validaNotificacion()
-    return true;
+    let retorno;
+    let numprod= localStorage.getItem('notificacion'); 
+    this.numProductos = numprod == null ? '0' : numprod;   
+    this.numProductos == '0' ? retorno = false : retorno = true
+    return retorno;
   }
 
 }

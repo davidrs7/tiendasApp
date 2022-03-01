@@ -22,6 +22,10 @@ export class CarritoComponent implements OnInit {
   @ViewChild("floatingBarrio") floatingBarrio: ElementRef;
   @ViewChild("modalDatosCliente") modalDatosCliente: ElementRef;
   @ViewChild("modalMetodoEntrega") modalMetodoEntrega: ElementRef;
+  @ViewChild("conDomicilio") conDomicilio: ElementRef;
+  @ViewChild("nacional") nacional: ElementRef;
+  tipoDomi: number;
+  DescTipEntrega: string;
 
 
   constructor(private router: Router
@@ -191,13 +195,35 @@ export class CarritoComponent implements OnInit {
   }
 
   domicilio(): string {
-    let cadena = this.costoDomicilio() + this.CadenaTotalPago() + this.cadenaDatosDomicilio();
-    this.totalFactura -= this.valorDomicilio;
+  
+    let cadena = this.tipoEntrega() + this.CadenaTotalPago() + this.cadenaDatosDomicilio();
+    this.totalFactura -= this.valorDomicilio; 
     return cadena;
   }
+
+  tipoEntrega():string{
+    
+    let tipEntrega = ''; 
+      
+     if (this.tipoDomi == 1){ 
+      tipEntrega = 'Retiro%20en%20tienda%0A'
+     }  
+
+     if (this.tipoDomi == 2){ 
+      tipEntrega = this.costoDomicilio()
+     }  
+
+     if (this.tipoDomi == 3){ 
+      tipEntrega ='Envío%20por%20transportadora%0A'
+     }  
+
+    return tipEntrega;
+    
+  }
+
   costoDomicilio(): string {
 
-    let costoDomicilio = 'domicilio%20...%20Valor%20unidad:%20' + this.pipeCurrency.transform(this.valorDomicilio, 'COP' ,'symbol-narrow','2.0-2') + '%0A';
+    let costoDomicilio = 'Domicilio%20...%20Valor%20unidad:%20' + this.pipeCurrency.transform(this.valorDomicilio, 'COP' ,'symbol-narrow','2.0-2') + '%0A';
     this.totalFactura += this.valorDomicilio;
     return  costoDomicilio;  
   }
@@ -211,6 +237,23 @@ export class CarritoComponent implements OnInit {
     let cadena = "";
     cadena = '-----------------------------------------------------------%0AMis%20datos%20son:%20%F0%9F%93%9D%F0%9F%93%9D%0A' + 'Nombres:' + '%20' + this.floatingNombres.nativeElement.value.replace(/\s/g, '%20') + '%0ATelefono:' + '%20' + this.floatingTelefono.nativeElement.value.replace(/\s/g, '%20') + '%0ACiudad:' + '%20' + this.floatingCuidad.nativeElement.value.replace(/\s/g, '%20') + '%0ADireccion:' + '%20' + this.floatingDireccion.nativeElement.value.replace(/\s/g, '%20') + '%0ABarrio%20-%20Localidad:' + '%20' + this.floatingBarrio.nativeElement.value.replace(/\s/g, '%20');
     return cadena;
+  }
+
+  tipoDomicilio(idDomi: number)
+  {
+    this.tipoDomi = idDomi; 
+    
+    if (this.tipoDomi == 1){
+      this.DescTipEntrega = 'Datos para el retirar en tienda' ; 
+     }  
+
+     if (this.tipoDomi == 2){
+      this.DescTipEntrega = 'Datos para el envío a domicilio' ; 
+     }  
+
+     if (this.tipoDomi == 3){
+      this.DescTipEntrega = 'Datos para envío por transportadora' ; 
+     }  
   }
 
 

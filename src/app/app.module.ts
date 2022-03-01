@@ -24,7 +24,9 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { MediosPagoComponent } from './components/medios-pago/medios-pago.component';
 import { FooterComponent } from './components/shared/footer/footer/footer.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
-import { CurrencyPipe } from '@angular/common';
+import { CurrencyPipe } from '@angular/common'; 
+import { modelos } from './Services/interfaces/modelos';
+import { referencias, productoPorIdReferencia, productoxIdColoryReferencia } from './Services/interfaces/referencias';
  
 
 
@@ -44,8 +46,7 @@ import { CurrencyPipe } from '@angular/common';
     InicioComponent,
     MediosPagoComponent,
     FooterComponent,
-    CarritoComponent
-      
+    CarritoComponent      
   ],
   imports: [
     BrowserModule, 
@@ -55,7 +56,8 @@ import { CurrencyPipe } from '@angular/common';
   providers: [
     HeroesService,
     TiendaService,
-    CurrencyPipe
+    CurrencyPipe,
+    modelos
   ],
   bootstrap: [AppComponent]
 })

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { referencias, TiendaService } from '../../Services/tienda.service';
+import {  TiendaService } from '../../Services/tienda.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { referencias } from 'src/app/Services/interfaces/referencias';
 
 @Component({
   selector: 'app-categorias',

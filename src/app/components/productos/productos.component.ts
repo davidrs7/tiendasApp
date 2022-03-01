@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'; 
-import { referencias, TiendaService } from '../../Services/tienda.service';
+import {  TiendaService } from '../../Services/tienda.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
