@@ -1,6 +1,5 @@
 <h1>Catálogo <small>Busos blinders</small> </h1>
 <hr>
-<!-- *ngFor="let heroe of heroes; let i = index"-->
 <div class="card-columns">
     <div class="card animated fadeIn fast" *ngFor="let referencia of referencias; let i = index;">
         <img class="card-img-top">
@@ -8,7 +7,7 @@
         <div class="card-body">
             <h5 class="card-title">{{ referencia.refDescripcion  | titlecase}}</h5>  
             <button type="button" (click)="verProductos(i)" class="btn btn-outline-primary" style="width: 100%;"><i class="bi bi-bag"></i> Comprar</button>
-            <!--<a [routerLink]="['/heroe',i]" class="btn btn-outline-primary" style="width: 100%;">Ver mas...</a>-->
+
         </div>
     </div>
 </div>
