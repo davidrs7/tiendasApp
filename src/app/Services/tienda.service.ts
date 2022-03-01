@@ -202,6 +202,30 @@ export class TiendaService {
       {
         refCodigo: 1,
         refDescripcion: 'BUSO CON CAPOTA UNISEX',
+        codColor: 1,
+        color: 'Rojo',
+        img: 'assets/img/Productos/capota/RojoCapota.PNG',
+        tallaCodigo: 3,
+        talla: 'L',
+        cantidad: 6,
+        vlrUnidad: 33000,
+        DescProducto: 'BUSO CON CAPOTA UNISEX ALGODON PERCHADO MONACO 220 GR DE EXCELENTE CALIDAD, CONFECCION CON PUNTADA DE SEGURIDAD'
+      },
+      {
+        refCodigo: 1,
+        refDescripcion: 'BUSO CON CAPOTA UNISEX',
+        codColor: 1,
+        color: 'Rojo',
+        img: 'assets/img/Productos/capota/RojoCapota.PNG',
+        tallaCodigo: 4,
+        talla: 'XL',
+        cantidad: 6,
+        vlrUnidad: 33000,
+        DescProducto: 'BUSO CON CAPOTA UNISEX ALGODON PERCHADO MONACO 220 GR DE EXCELENTE CALIDAD, CONFECCION CON PUNTADA DE SEGURIDAD'
+      },
+      {
+        refCodigo: 1,
+        refDescripcion: 'BUSO CON CAPOTA UNISEX',
         codColor: 2,
         color: 'Verde neon',
         img: 'assets/img/Productos/capota/NeonCapota.PNG',
@@ -392,6 +416,7 @@ export class TiendaService {
         DescProducto: 'BUSO CON CAPOTA NIÑO UNISEX ALGODON PERCHADO MONACO 220 GR DE EXCELENTE CALIDAD, CONFECCION CON PUNTADA DE SEGURIDAD'
       },
     ]
+ 
 
 
   getReferencias(): referencias[] {
@@ -406,7 +431,12 @@ export class TiendaService {
     console.log ('en servicio' + refCodigo);
     return this.producto.filter(prod => prod.codColor == colorCodigo && prod.refCodigo == refCodigo);
   }
+ 
 
+}
+
+export interface notifica {
+  valor: string
 }
 
 export interface referencias {

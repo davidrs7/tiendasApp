@@ -1,33 +1,35 @@
-import { Component, OnInit } from '@angular/core';
-import { HeroesService, Heroe } from '../../../Services/heroes.service';
-import { Router } from '@angular/router';
+import { Component, ElementRef, Input, OnInit, SimpleChange, SimpleChanges, ViewChild } from '@angular/core'; 
+import { ActivatedRoute, Router } from '@angular/router'; 
+import { TiendaService } from 'src/app/Services/tienda.service'; 
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit {
-  numProductos:number;
-  constructor(private _heroesService:HeroesService,
-    private router: Router) {
-        
- 
+export class NavbarComponent implements OnInit {  
+  numProductos:string;
+  constructor(private _tiendaService:TiendaService,
+    private router: Router
+    ,private activateRoute: ActivatedRoute) {   
      }
 
-  ngOnInit(): void {
-    this.validaNotificacion();
-  }
+  ngOnInit(): void { 
+  } 
 
-
-  validaNotificacion(){ 
-    let numprod= localStorage.getItem('notificacion');
-    this.numProductos = numprod == null ? 0 : parseInt(numprod);
+  validaNotificacion(){  
+    let numprod= localStorage.getItem('notificacion'); 
+    this.numProductos = numprod == null ? '0' : numprod;    
   }
 
   buscarHeroe (Texto:string){
         console.log(Texto)
         this.router.navigate(['/buscar-heroe',Texto])
+  }
+
+  notifica(){
+    this.validaNotificacion()
+    return true;
   }
 
 }

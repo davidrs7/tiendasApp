@@ -34,13 +34,13 @@
                     <a class="nav-link" [routerLink]="['about']">Contactenos</a>
                 </li>
             </ul>
-            <form>
+            <form id="CarritoButtomForm"  #CarritoButtomForm >
                 <button type="button" [routerLink]="['carrito']" class="btn btn-success  position-relative">
                     <i class="bi bi-bag"></i> Mis compras <b></b>
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                        {{numProductos}} 
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" *ngIf="notifica()">
+                        {{ numProductos }} 
                     </span>
-                </button>
+                </button> 
             </form>
             
         </div> 

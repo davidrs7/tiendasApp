@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild, Input, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subject } from 'rxjs';
 import { TiendaService } from 'src/app/Services/tienda.service';
 import Swal from 'sweetalert2';
 
@@ -19,6 +20,7 @@ export class ProductoTarjetaComponent implements OnInit {
 
   @ViewChild("inputZip") inputZip: ElementRef;
   tallaSelected: boolean = false;
+  public notificaion:  Subject<string> = new Subject<string>();
 
   constructor(private _tiendaService: TiendaService
     , private router: Router
@@ -74,7 +76,7 @@ export class ProductoTarjetaComponent implements OnInit {
     }
   }
 
-  addCarrito() {
+  addCarrito():void {
 
     this.carritoActual = JSON.parse(localStorage.getItem('productoCarrito')) != null ? JSON.parse(localStorage.getItem('productoCarrito')) : this.carritoActual;
 
@@ -117,7 +119,8 @@ export class ProductoTarjetaComponent implements OnInit {
     }
 
     localStorage.setItem('productoCarrito', JSON.stringify(this.carritoActual));
-    localStorage.setItem('notificacion',  this.carritoActual.length.toString());
+   localStorage.setItem('notificacion',  this.carritoActual.length.toString());
+   
   }
 
 }
