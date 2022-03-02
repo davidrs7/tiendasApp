@@ -19,7 +19,7 @@ const APP_ROUTES: Routes = [
     { path: 'productos/:refCodigo', component: ProductosComponent},
     { path: 'producto/:refCodigo/:colorCodigo', component: ProductoTarjetaComponent},
     { path: 'carrito', component: CarritoComponent},
-    { path: '**',pathMatch: 'full', redirectTo : 'inicio'}
+    { path: '**',pathMatch: 'full', redirectTo : 'categorias'}
 
 
     //{ path: 'path/:routeParam', component: MyComponent },
