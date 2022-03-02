@@ -18,8 +18,7 @@ export class TiendaService {
     return this._modelo.refColor.filter(ref => ref.refCodigo == refCodigo);
   };
 
-  getProductoxIdColoryReferencia(refCodigo: number, colorCodigo: number):productoxIdColoryReferencia[] { 
-    console.log ('en servicio' + refCodigo);
+  getProductoxIdColoryReferencia(refCodigo: number, colorCodigo: number):productoxIdColoryReferencia[] {  
     return this._modelo.producto.filter(prod => prod.codColor == colorCodigo && prod.refCodigo == refCodigo);
   };
 

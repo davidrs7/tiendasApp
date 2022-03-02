@@ -17,8 +17,7 @@ export class ProductosComponent implements OnInit {
               { 
                 this.activatedRoute.params.subscribe(params=>{  
                   this.refCodigo = params['refCodigo']
-                  this.productos = this._tiendaService.getProductosXrefCod(params['refCodigo']);
-                  //console.log(this.productos);
+                  this.productos = this._tiendaService.getProductosXrefCod(params['refCodigo']); 
                 })
               }
 

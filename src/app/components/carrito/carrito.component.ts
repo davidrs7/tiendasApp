@@ -42,8 +42,7 @@ export class CarritoComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {
-    console.log('Hola mundo');
+  ngOnInit(): void { 
 
   }
 
@@ -52,14 +51,12 @@ export class CarritoComponent implements OnInit {
     this.productos[i].vlrTotal = this.productos[i].cantidadEnviada * this.productos[i].vlrUnidad
     if (this.productos[i].cantidadEnviada == 0) {
       this.productos = this.productos.filter(x => x.cantidadEnviada > 0)
-    }
-    console.log(this.productos);
+    } 
     this.calcularTotalFactura();
     this.ActualizaStorage();
   }
 
-  sumarCantidad(i: number) {
-    console.log(this.productos[i]);
+  sumarCantidad(i: number) { 
 
     if (parseInt(this.productos[i].cantidadEnviada) + 1 > this.productos[i].cantidadDisponible) {
       Swal.fire({

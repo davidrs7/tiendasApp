@@ -12,4 +12,8 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  traerImagen(){
+    return 'assets/img/Productos/home.PNG';
+  }
+
 }

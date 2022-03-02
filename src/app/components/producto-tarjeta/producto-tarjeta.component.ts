@@ -34,14 +34,12 @@ export class ProductoTarjetaComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  asignarTalla(i: number) {
-    //console.log(this.producto[i]);
+  asignarTalla(i: number) { 
     this.index = i;
     this.tallaSelected = true;
   }
 
-  validarDisponibilidad() {
-    //console.log('abc-' + this.producto[0].cantidad);
+  validarDisponibilidad() { 
     if (this.inputZip.nativeElement.value == 0) { 
       Swal.fire({
         title: 'Error!',

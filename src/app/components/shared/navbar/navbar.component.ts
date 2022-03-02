@@ -22,8 +22,7 @@ export class NavbarComponent implements OnInit {
     this.numProductos = numprod == null ? '0' : numprod;    
   }
 
-  buscarHeroe (Texto:string){
-        console.log(Texto)
+  buscarHeroe (Texto:string){ 
         this.router.navigate(['/buscar-heroe',Texto])
   }
 

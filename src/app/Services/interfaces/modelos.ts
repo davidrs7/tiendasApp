@@ -5,11 +5,9 @@ import { productoPorIdReferencia, productoxIdColoryReferencia, referencias } fro
  
 @Injectable()
 export class modelos implements OnInit {
-  constructor() {
-    console.log('Modelos para usar!!');
+  constructor() { 
   }
-    ngOnInit(): void {
-         
+    ngOnInit(): void { 
     }
 
 
