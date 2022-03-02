@@ -12,4 +12,8 @@ export class MediosPagoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  traerImagen(){
+    return 'assets/img/Productos/mediosPago.PNG';
+  }
+
 }

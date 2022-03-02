@@ -11,4 +11,8 @@ export class AboutComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  traeImagen(){
+    return 'assets/img/Productos/about.PNG';
+  }
+
 }

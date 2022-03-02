@@ -19,4 +19,12 @@ export class InicioComponent implements OnInit {
     this.router.navigate(['/categorias'])
   }
 
+  traerImagen(id:number){
+    let imagenRetorno =''
+    if (id == 1) { imagenRetorno = 'assets/img/Productos/Inicio.PNG' }
+    if (id == 2) { imagenRetorno = 'assets/img/Productos/inicio3.PNG' }
+    if (id == 3) { imagenRetorno = 'assets/img/Productos/inicio4.PNG' }
+    return imagenRetorno;
+  }
+
 }
