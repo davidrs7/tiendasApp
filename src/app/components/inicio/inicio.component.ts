@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inicio',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit {
 
-  constructor() { }
+  mensajeInicio:string;
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+    this.mensajeInicio = 'Hola!, haz clic en la imagen para conocer nuestros productos';
+  }
+
+  iraTienda(){
+    this.router.navigate(['/categorias'])
   }
 
 }
